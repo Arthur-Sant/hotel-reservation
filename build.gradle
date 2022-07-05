@@ -1,9 +1,22 @@
 apply plugin: 'java'
+apply plugin: 'application'
 
 repositories {
-    jcenter()
+//    jcenter()
+    mavenCentral()
 }
 
 dependencies {
-    testCompile 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13.2'
+
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
 }
+
+//test{
+//    useJUnitPlataform()
+//}
+
+mainClassName = 'HotelReservation'
